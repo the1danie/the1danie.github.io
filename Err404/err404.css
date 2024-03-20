@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    color: #4070F4;
+    margin-left: -50px;
+}
+
+.error-page {
+    position: absolute;
+    top:10%;
+    left: 17%;
+    right: 17%;
+    bottom: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-page .content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 18vw;
+    line-height: 1em;
+}
+
+.content h4 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #4070F4;
+    max-width: 600px;
+    font-size: 2em;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #4070F4;
+}
+
+.content .btns {
+    margin: 25px 0;
+    display: inline-flex;
+}
+
+.content .btns a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #4070F4;
+    color: #4070F4;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+.content .btns a:hover {
+    color: #fff;
+    background: #4070F4;
+}
+@keyframes rotateAnimation {
+    0% { transform: rotate(0deg); } /* Начальный угол вращения */
+    100% { transform: rotate(360deg); } /* Конечный угол вращения */
+}
+
+@keyframes moveElement {
+    0% {
+        transform: translateX(0) translateY(0); /* Начальное положение */
+    }
+    50% {
+        transform: translateX(100px) translateY(50px); /* Положение на середине анимации */
+    }
+    100% {
+        transform: translateX(150px) translateY(75px); /* Конечное положение */
+    }
+}
+
+@keyframes scaleAnimation {
+    0% { transform: scale(1); } /* Начальный размер элемента */
+    50% { transform: scale(1.5); } /* Размер элемента через половину времени анимации */
+    100% { transform: scale(1); } /* Конечный размер элемента */
+}
+
+@keyframes skewAnimation {
+    0% {
+      transform: skew(0deg);
+    }
+    50% {
+      transform: skew(20deg);
+    }
+    100% {
+      transform: skew( -20deg);
+    }
+  }
+  
+
+  
+
+
+.image {
+    width: 300px;
+    position: absolute;
+    display: inline-block;
+    animation: rotateAnimation 2s infinite linear; /* Применяем анимацию к элементу */
+}
+
+.image_2 {
+    width: 300px;
+    right: 150px;
+    position: absolute;
+    display: inline-block;
+    animation: moveElement 3s infinite alternate; /* Применяем анимацию к элементу */
+}
+
+.image_3 {
+    width: 300px;
+    bottom: 50px;
+    left: 0;
+    position: absolute;
+    display: inline-block;
+    animation: scaleAnimation 3s infinite alternate; /* Применяем анимацию к элементу */
+}
+
+.image_4 {
+    animation: skewAnimation 3s infinite alternate;   
+    width: 300px;
+    bottom: 50px;
+    right: 50px;
+    position: absolute;
+    display: inline-block;  
+}
+
+.svg-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+@keyframes scale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+.animated-svg {
+    animation: scale 2s infinite alternate; /* применяем анимацию */
+}

@@ -1,0 +1,435 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+:root{
+    --body-color: #ffffff;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+
+
+body.dark {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+}
+
+nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-links li a::before {
+    content: '';
+    bottom: 0;
+    transform: translateX(50%);
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3 ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i, .searchToggle i {
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox{
+    position: relative;
+}
+
+.searchBox .search-field {
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-field::before {
+    content: '';
+    position: absolute;
+    height: 12px;
+    right: 14px;
+    top: -4px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.search-field input {
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: var(--search-text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.search-field i {
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.searchToggle.active ~ .search-field {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+table {
+    width: calc(100% - 500px); /* Ширина таблицы с учетом отступов с обеих сторон */
+    border-collapse: collapse; /* Объединение границ */
+    margin-top: 200px; /* Отступ сверху */
+    margin-left: auto; /* Автоматический отступ слева */
+    margin-right: auto; /* Автоматический отступ справа */
+}
+
+thead th:nth-child(1), /* Выбираем первую колонку в заголовке таблицы */
+tbody td:nth-child(1) { /* Выбираем первую колонку в содержимом таблицы */
+    text-indent: 40px; /* Смещаем текст на 20px вправо */
+}
+
+body.dark .coin, body.dark .price, body.dark .volume, body.dark .volume_24h, body.dark .hour_one, body.dark .h_24h, body.dark .week {
+    color: #d1d1d1; /* Цвет текста для .coin на темной теме */
+}
+
+
+
+
+.price {
+    text-indent: -80px;
+}
+
+.volume {
+    text-indent: 50px;
+}
+
+.volume_24h {
+    text-indent: -200px;
+}
+
+footer {
+    position: fixed; /* Фиксируем позицию подвала */
+    bottom: 0; /* Располагаем его внизу экрана */
+    left: 0; /* Располагаем его влево */
+    width: 100%; /* Задаем ширину 100% */
+    background-color: #333; /* Цвет фона подвала */
+    color: #fff; /* Цвет текста подвала */
+    padding: 20px; /* Внутренний отступ подвала */
+    text-align: center; /* Выравнивание текста по центру */
+    z-index: 1000; /* Устанавливаем z-index, чтобы подвал отображался поверх других элементов */
+}
+
+
+
+
+
+thead th {
+    background-color: var(--nav-color); /* Цвет фона ячеек заголовка */
+    color: var(--text-color); /* Цвет текста в ячейках заголовка */
+    font-weight: bold; /* Жирный текст */
+    padding: 10px; /* Внутренние отступы */
+    text-align: justify; /* Выравнивание текста по ширине */
+    border-bottom: 2px solid var(--body-color); /* Граница снизу */
+    border-width: 0 1px; /* Уменьшаем границы слева и справа */
+    word-spacing: 2px;/* Устанавливаем отступ между буквами */
+    padding-bottom: 15px; /* Добавляем отступ снизу */
+}
+
+tbody td {
+    padding: 10px; /* Внутренние отступы */
+    border-bottom: 1px solid var(--body-color); /* Граница снизу */
+    border-width: 0 1px; /* Уменьшаем границы слева и справа */
+    text-align: justify; /* Выравнивание текста по ширине */
+    word-spacing: 2px; /* Устанавливаем отступ между буквами */
+}
+
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Цвет фона строки при наведении */
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #FFF;
+    background-size: cover;
+    background-position: center;
+ /* Убираем отступы */
+}
+
+.wrapper {
+    width: 420px;
+    color: var(--nav-color);
+    background-color: purple;
+    border-radius: 10px;
+    padding: 30px 40px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(64, 112, 244, 0.2);
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(64, 112, 244, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: var(--nav-color);
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: var(--nav-color);
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot a {
+    color: var(--nav-color);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #FFF;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(64, 112, 244, 0.2);
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--nav-color);
+    font-style: 600;
+    transition: transform 0.3s, box-shadow 0.3s; /* добавляем анимацию при hover */
+}
+
+.wrapper .btn:hover {
+    transform: translateY(-3px); /* кнопка поднимется на 3px при наведении */
+    box-shadow: 0 0 20px rgba(64, 112, 244, 0.2); /* тень увеличится при наведении */
+}
+
+
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: var(--nav-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Стилизация для контейнера чекбокса */
+.remember-forgot input[type="checkbox"] {
+    position: relative; /* Позиционируем контейнер относительно */
+    appearance: none; /* Скрываем стандартный вид чекбокса */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px; /* Установка размеров для кастомного чекбокса */
+    height: 20px;
+    border: 2px solid #4070F4; /* Устанавливаем цвет обводки */
+    border-radius: 4px; /* Создаем скругленные углы */
+    outline: none; /* Убираем обводку при фокусе */
+    cursor: pointer; /* Устанавливаем курсор в виде стрелки при наведении */
+    vertical-align: middle; /* Выравниваем по вертикали */
+}
+
+/* Стилизация для отмеченного чекбокса */
+.remember-forgot input[type="checkbox"]:checked {
+    background-color: #4070F4; /* Устанавливаем фоновый цвет при отмеченном состоянии */
+}
+
+/* Стилизация для галочки */
+.remember-forgot input[type="checkbox"]::before {
+    content: "\2713"; /* Устанавливаем Unicode символ для галочки */
+    position: absolute; /* Позиционируем галочку абсолютно */
+    top: 50%; /* Выравниваем по вертикали на половину высоты контейнера */
+    left: 50%; /* Выравниваем по горизонтали на половину ширины контейнера */
+    transform: translate(-50%, -50%); /* Центрируем галочку */
+    font-size: 14px; /* Устанавливаем размер шрифта для галочки */
+    color: #FFF; /* Устанавливаем цвет галочки */
+    visibility: hidden; /* Скрываем галочку по умолчанию */
+}
+
+/* Стилизация для галочки при отмеченном состоянии */
+.remember-forgot input[type="checkbox"]:checked::before {
+    visibility: visible; /* Отображаем галочку при отмеченном состоянии */
+}
+
+.remember-forgot input[type="checkbox"] {
+    margin-right: 10px; /* Задаем отступ справа для флажка */
+}
+
+.text {
+    margin-top: 10px; /* Установите значение по вашему усмотрению */
+}
