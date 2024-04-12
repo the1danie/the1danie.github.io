@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Коты и мыши</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0; /* Убираем отступы по умолчанию */
+        padding: 0; /* Убираем отступы по умолчанию */
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('cat.png'); /* Фоновое изображение */
+        background-size: cover; /* Масштабируем фон до размеров окна */
+        background-position: center; /* Выравниваем фон по центру */
+        z-index: -1; /* Помещаем фон под содержимое страницы */
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Задаем цвет и непрозрачность затемнения */
+        z-index: -1; /* Помещаем затемнение под содержимое страницы */
+    }
+
+    #text-block {
+        margin: 120px auto;
+        padding: 120px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+    }
+
+    #cat-image {
+        display: none;
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .cat-icon {
+    width: 50px; /* Устанавливаем желаемую ширину изображения */
+    height: auto; /* Позволяет изображению сохранять пропорции при изменении размера */
+    vertical-align: middle;
+    cursor: pointer; /* Выравниваем изображение по вертикали */
+}
+
+</style>
+</head>
+<body>
+
+<div class="background"></div> <!-- Элемент для фонового изображения -->
+<div class="overlay"></div> <!-- Элемент для затемнения -->
+
+<div id="text-block">
+    <h2>Рассказ про кота и мышей</h2>
+    <p>Однажды в доме жил <span class="highlight">кот</span>. Каждый день он ловил мышей во дворе. Однажды, когда <span class="highlight">кот</span> вышел на охоту, одна из мышей решила поднять бунт. Она собрала всех мышей и начала рассказывать о своем плане. «Мы должны собраться вместе и показать этому <span class="highlight">кот</span>у, кто здесь хозяин!» — сказала мышь.</p>
+    <p><span class="highlight">Кот</span> не заметил, что его обсуждают. Но одна из мышей услышала слово «<span class="highlight">кот</span>». Она была очень любознательна. И вот, несколько минут спустя, когда мышь сказала слово «<span class="highlight">кот</span>» в пятый раз, <span class="highlight">кот</span> прыгнул вперед и словно молния исчез.</p>
+    <p>Мышь испугалась и продолжила: «Мы должны быть готовы атаковать его, когда он не будет ждать!» Вдруг, на глазах у мышей, изображение <span class="highlight">кот</span>а с мышью появилось на экране.</p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+    // При наведении мыши на слово "кот"
+    $('.highlight').on('mouseenter', function() {
+        $(this).html('<img src="cat and mouse.jpg" class="cat-icon" alt="Кот">'); 
+    });
+
+    // При уходе мыши с текста
+    $('.highlight').on('mouseleave', function() {
+        $(this).html('кот'); 
+    });
+});
+
+</script>
+
+</body>
+</html>

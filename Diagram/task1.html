@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диапозон цен</title>
+    
+    <!-- Подключение шрифта Open Sans с помощью Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Подключение библиотеки Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <!-- Подключение файла стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-size: 25px; font-weight: bold; text-align: center;">Диапозон цен Альткоинов</h1>
+        <div class="dis-stats">
+            <div class = "stats">
+                <!-- Канвас для отображения графика цен -->
+                <canvas id="myChart"></canvas>
+                <!-- Подключение скрипта для создания графика -->
+                <script src="chart.js"></script>
+            </div>
+            <div class="details">
+                <!-- Список с информацией о ценах альткоинов -->
+                <ul>
+                    <li>
+                        <h3>Актуальная цена Ethereum: <span class="price">3464$</span></h3><br>
+                        <span>Суточный объем составляет 3,585,234 ETH</span>
+                    </li>
+                    <li>
+                        <h3>Актуальная цена BNB: <span class="price">612$</span></h3><br>
+                        <span>Суточный объем составляет 2,789,137 BNB</span>
+                    </li>
+                    <li>
+                        <h3>Актуальная цена Litecoin: <span class="price">96$</span></h3><br>
+                        <span>Суточный объем составляет 6,232,578 LTC</span>
+                    </li>
+                    <li>
+                        <h3>Актуальная цена Solana: <span class="price">167.94$</span></h3><br>
+                        <span>Суточный объем составляет 14,327,420 SOL</span>
+                    </li>
+                    <li>
+                        <h3>Актуальная цена AAve: <span class="price">113.23$</span></h3><br>
+                        <span>Суточный объем составляет 905,247 AAVE</span>
+                    </li>
+                    <li>
+                        <h3>Актуальная цена Gnosis: <span class="price">368.32$</span></h3><br>
+                        <span>Суточный объем составляет 41,672 GNO</span>
+                    </li>
+                    <li>
+                        <h3>Актуальная цена Montero: <span class="price">134.25$</span></h3><br>
+                        <span>Суточный объем составляет 18,422,622 XMR</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+        
+    </script>
+
+</body>
+</html>

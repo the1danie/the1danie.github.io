@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+</head>
+<body>
+    <!-- Заголовок, который предлагает пользователю ввести год рождения -->
+    <h1>Введите год рождения пользователя</h1>
+    <!-- Поле ввода для года рождения -->
+    <input type="number" id="birthYearInput" placeholder="Год рождения">
+    <!-- Кнопка, при нажатии на которую будет вычисляться и показываться возраст -->
+    <button onclick="calculateAndShowAge()">Показать возраст</button>
+
+    <script>
+        // Функция для вычисления возраста на основе года рождения
+        function calculateAge(birthYear) {
+            // Получаем текущую дату
+            var currentDate = new Date();
+            // Получаем текущий год
+            var currentYear = currentDate.getFullYear();
+            // Вычисляем возраст
+            var age = currentYear - birthYear;
+
+            // Возвращаем вычисленный возраст
+            return age;
+        }
+
+        // Функция для вычисления и отображения возраста при нажатии на кнопку
+        function calculateAndShowAge() {
+            // Получаем элемент поля ввода года рождения
+            var birthYearInput = document.getElementById("birthYearInput");
+            // Получаем значение года рождения из поля ввода и преобразуем его в число
+            var birthYear = parseInt(birthYearInput.value);
+
+            // Вычисляем возраст с помощью функции calculateAge
+            var age = calculateAge(birthYear);
+            // Выводим возраст в виде сообщения с помощью всплывающего окна (alert)
+            alert("Возраст пользователя: " + age + " лет");
+        }
+    </script>
+</body>
+</html>

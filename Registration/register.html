@@ -19,6 +19,7 @@
                     <li><a href="../exchanges.html">Exchanges</a></li>
                     <li><a href="">Join</a></li>
                     <li><a href="../Err404/err404.html">404 Page</a></li>
+                    <li><a href="../Maps/map2.html">Maps</a></li>
                 </ul>
             </div>
 
@@ -46,33 +47,32 @@
         <form action="">
             <h1>Registration</h1>
             <div class="input-box">
-                <input type="text" placeholder="Enter your name" required>
+                <input type="text" id="nameInput" placeholder="Enter your name" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" id="emailInput" placeholder="Enter your email" required>
                 <i class='bx bxs-inbox' ></i>
             </div>
-
             <div class="input-box">
-                <input type="password" placeholder="Create password" required>
+                <input type="password" id="passwordInput" placeholder="Create password" required>
                 <i class='bx bxs-lock-open' ></i>
             </div>
-
             <div class="input-box">
-                <input type="password" placeholder="Confirm password" required>
+                <input type="password" id="confirmPasswordInput" placeholder="Confirm password" required>
                 <i class='bx bxs-lock' ></i>
             </div>
-
             <div class="remember-forgot">
-                <label><input type="checkbox">I accept all terms & conditions</label>
+                <label><input type="checkbox" id="termsCheckbox">I accept all terms & conditions</label>
             </div>
-
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="btn" id="submitButton">Register</button>
+            
 
             <div class="text">
                 <p>Already have an acoount? <a href="login.html">Login now</a></p>
             </div>
+            <div id="resultDiv"></div>
+
         </form>
     </div>
     
@@ -80,7 +80,64 @@
     <footer id="siteFooter">
         <p>О нас: Мы компания, специализирующаяся на отслеживании данных о криптовалютах.</p>
     </footer>
+
+    <script>
+       // Получаем ссылки на элементы HTML, с которыми будем взаимодействовать.
+        var resultDiv = document.getElementById("resultDiv");
+        var nameInput = document.getElementById("nameInput");
+        var emailInput = document.getElementById("emailInput");
+        var passwordInput = document.getElementById("passwordInput");
+        var confirmPasswordInput = document.getElementById("confirmPasswordInput");
+        var termsCheckbox = document.getElementById("termsCheckbox");
+        var submitButton = document.getElementById("submitButton");
+
+        // Функция для валидации email с помощью регулярного выражения.
+        function validateEmail(email) {
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase()); 
+        }
+
+        // Добавляем обработчик события click на кнопку submitButton.
+        submitButton.addEventListener("click", function(event) {
+            // Получаем значения из полей ввода, удаляем начальные и конечные пробелы.
+            var name = nameInput.value.trim();
+            var email = emailInput.value.trim();
+            var password = passwordInput.value.trim();
+            var confirmPassword = confirmPasswordInput.value.trim();
+            var termsChecked = termsCheckbox.checked;
+
+            // Проверяем, что все поля формы заполнены.
+            if (!name || !email || !password || !confirmPassword) {
+                alert("Заполните все поля формы");
+                event.preventDefault(); // Отменяем отправку формы.
+                return;
+            }
+
+            // Проверка условий валидации.
+            if (name.length < 3  && email.length < 3) {
+                alert("3 символа мало");
+            } else if (!validateEmail(email)) {
+                alert("Не валидный email");
+            } else if (password.length < 8 || password.length > 16) {
+                alert("Пароль должен быть от 8 до 16 символов");
+            } else if (password !== confirmPassword) {
+                alert("Пароли не совпадают");
+            } else if (!termsChecked) {
+                alert("Подтвердите соглашение");
+            }
+
+            // Выводим результаты введенных данных в блок resultDiv.
+            resultDiv.innerHTML = "<p>Name: " + name + "</p>" +
+                                "<p>Email: " + email + "</p>" +
+                                "<p>Password: " + password + "</p>" +
+                                "<p>Confirm Password: " + confirmPassword + "</p>";
+            event.preventDefault(); // Отменяем отправку формы.
+        });
+
+
+    </script>
     <script src="../script.js"></script>
+    
     
 </body>
 </html>
