@@ -333,17 +333,22 @@ body.dark .coin, body.dark .price, body.dark .volume, body.dark .volume_24h, bod
 
 
 
-.price {
-    text-indent: -80px;
-}
-
-.volume {
-    text-indent: 50px;
-}
-
+.price,
+.volume,
 .volume_24h {
-    text-indent: -200px;
+    text-align: right; /* Align the text to the right */
+    padding-right: 20px; /* Add padding to the right */
 }
+
+@media screen and (max-width: 768px) {
+    .price,
+    .volume,
+    .volume_24h {
+        text-align: left; /* Align the text to the left for smaller screens */
+        padding-right: 0; /* Remove right padding */
+    }
+}
+
 
 footer {
     position: fixed; /* Фиксируем позицию подвала */
