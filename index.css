@@ -333,21 +333,40 @@ body.dark .coin, body.dark .price, body.dark .volume, body.dark .volume_24h, bod
 
 
 
-.price,
-.volume,
-.volume_24h {
-    text-align: right; /* Align the text to the right */
-    padding-right: 20px; /* Add padding to the right */
+table {
+    width: 80%;
+    border-collapse: collapse;
 }
 
-@media screen and (max-width: 768px) {
-    .price,
-    .volume,
-    .volume_24h {
-        text-align: left; /* Align the text to the left for smaller screens */
-        padding-right: 0; /* Remove right padding */
-    }
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
+
+.coin {
+    width: 20%;
+}
+
+.price, .volume, .main_volume_24h, .hour_one, .h_24h, .week {
+    width: 16%;
+}
+
+.week {
+    padding-right: 50px;
+    position: relative; /* Примерный отступ справа для смещения столбца "Week" вправо */
+}
+
+
+.volume_24h {
+    width: 12%;
+}
+
+.thead-dark th {
+    background-color: #4070F4;
+    color: white;
+}
+
 
 
 footer {
@@ -390,3 +409,36 @@ tbody td {
 tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Цвет фона строки при наведении */
 }
+
+.table-row:hover {
+    background-color: #f0f0f0; /* Change to gray on hover */
+}
+
+.table-row {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.coin img.coin-icon-last,
+.coin img.coin-icon-bch,
+.coin img.coin-icon-trx,
+.coin img.coin-icon-usdc,
+.coin img.coin-icon-shiba,
+.coin img.coin-icon-avalanche,
+.coin img.coin-icon-ada,
+.coin img.coin-icon-doge,
+.coin img.coin-icon-xrp,
+.coin img.coin-icon-sol,
+.coin img.coin-icon-bnb,
+.coin img.coin-icon-eth,
+.coin img.coin-icon-btc,
+.coin img.coin-icon-dot {
+    /* Регулируйте отступ слева от текста */
+    margin-right: 5px;
+    /* Выравнивание изображения по вертикали */
+    vertical-align: middle;
+    /* Замените на желаемый размер иконки */
+    width: 20px;
+    height: auto;
+}
+

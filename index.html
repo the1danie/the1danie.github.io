@@ -7,6 +7,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Main website</title>
     <link rel="shortcut icon" href="img/crypto.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="api.js"></script>
 </head>
 <body>
     <nav>
@@ -42,157 +44,157 @@
             </div>
         </div>
     </nav>
+    
     <table>
         <thead class="thead-dark">
             <tr>
                 <th scope="col" class="coin">Coin</th>
                 <th scope="col" class="price">Price</th>
-                <th scope="col" class="volume">Volume</th>
+                <th scope="col" class="volume">Volume USDT</th>
                 <th scope="col" class="volume_24h">Volume 24h</th>
                 <th scope="col" class="hour_one">1h</th>
                 <th scope="col" class="h_24h">24h</th>
-                <th scope="col" class="week">Week</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+        <tbody >
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/bitcoin.png" class="coin-icon-btc">Bitecoin</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/ethereum.png" class="coin-icon-eth">Ethereum</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/bnb.png" class="coin-icon-bnb">Binance Coin</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/Solana.png" class="coin-icon-sol">Solana</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/cardano.png" class="coin-icon-xrp">Ripple</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/dogecoin.png" class="coin-icon-doge">Dogecoin</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/cardano.png" class="coin-icon-ada">Cardano</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/avalanche.png" class="coin-icon-avalanche">Avalanche</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/shiba.png" class="coin-icon-shiba">Shiba Inu</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/usdc.png" class="coin-icon-usdc">USDC</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/tron.png" class="coin-icon-trx">TRON</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/bch.png" class="coin-icon-bch">Bitcoin Cash</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/polkadot.png" class="coin-icon-dot">Polkadot</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
 
-            <tr>
-                <td class="coin">Bitcoin</td>
-                <td class="price">$50,000</td>
-                <td class="volume">10,000</td>
-                <td class="volume_24h">20,000</td>
-                <td class="hour_one">2%</td>
-                <td class="h_24h">5%</td>
-                <td class="week">10%</td>
+            <tr class="table-row" data-href="https://www.binance.com/en/markets/overview">
+                <td class="coin"><img src="img/matic.png" class="coin-icon-last">Polygon</td>
+                <td class="price"></td>
+                <td class="volume"></td>
+                <td class="volume_24h"></td>
+                <td class="hour_one"></td>
+                <td class="h_24h"></td>
+                
             </tr>
             <!-- Добавьте дополнительные строки для других элементов -->
         </tbody>
@@ -201,6 +203,7 @@
         <p>О нас: Мы компания, специализирующаяся на отслеживании данных о криптовалютах.</p>
     </footer>
     <script src="script.js"></script>
+    
     
 </body>
 </html>

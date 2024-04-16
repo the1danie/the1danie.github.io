@@ -12,5 +12,3 @@ const body = document.querySelector("body"),
       searchToggle.addEventListener("click", () => {
         searchToggle.classList.toggle("active");
       });
-
-      
