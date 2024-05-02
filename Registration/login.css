@@ -20,7 +20,7 @@
 
 body.dark {
     --body-color: #18191A;
-    --nav-color: #242526;
+    --nav-color: #4070F4;
     --side-nav: #242526;
     --text-color: #CCC;
     --search-bar: #242526;
@@ -281,7 +281,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #FFF;
+    background: var(--body-color);
     background-size: cover;
     background-position: center;
  /* Убираем отступы */
@@ -296,6 +296,8 @@ body {
     background: transparent;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(64, 112, 244, 0.2);
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper h1 {
@@ -432,4 +434,91 @@ body {
 
 .text {
     margin-top: 10px; /* Установите значение по вашему усмотрению */
+}
+
+
+.dropbtn {
+    background-color: var(--nav-color);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -103px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #2e64f8;
+  }
+
+  .dropdown_three {
+    width: 15px;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 6px 0;
+  }
+
+  dl, ol, ul {
+    margin-bottom: 0rem !important;
+    padding-left: 0rem !important;
+  }
+
+@media screen and (min-width: 800px){
+    .dropbtn {
+        display: none;
+    }
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .nav-bar .nav-links {
+        display: none;
+    }
+    .nav-bar .darkLight-searchBox {
+        display: none;
+    }
+    nav .nav-bar {
+        justify-content: space-between;
+    }
+    nav .nav-bar .logo a {
+        font-size: 30px;
+    }
+    .wrapper {
+        backdrop-filter: none;
+    }
 }

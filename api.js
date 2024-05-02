@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultVolume = parseFloat(message.v);
     const volUSDT = parseFloat(message.q);
     
-  
+
     priceElement.innerText = priceChange.toFixed(0) + "$";
     priceVol.innerText = priceChangePercentage.toFixed(2) + "%";
     price24h.innerText = priceChangePercentage24h.toFixed(2) + "%";
