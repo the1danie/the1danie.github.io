@@ -82,13 +82,16 @@ nav .nav-bar .logo a {
     height: 6px;
     width: 6px;
     border-radius: 50%;
-    background-color: var(--text-color);
     opacity: 0;
     transition: all 0.3 ease;
 }
 
 .nav-links li:hover a::before {
     opacity: 1;
+}
+
+body.dark {
+    background: var(--search-text);
 }
 
 .nav-bar .darkLight-searchBox{
@@ -294,7 +297,6 @@ body {
     border-radius: 10px;
     padding: 30px 40px;
     background: transparent;
-    backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(64, 112, 244, 0.2);
     display: flex;
     justify-content: center;
@@ -521,4 +523,56 @@ body {
     .wrapper {
         backdrop-filter: none;
     }
+}
+
+
+
+/* Стили для выпадающего меню */
+/* Dropdown Button */
+.dropbtn_new {
+    background-color: var(--nav-color);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown_new {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content_new {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content_new a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content_new a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown_new:hover .dropdown-content_new {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown_new:hover .dropbtn_new {
+    background-color: #2e64f8;
 }
