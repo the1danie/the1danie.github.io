@@ -557,7 +557,7 @@ tbody tr:hover {
         display: none;
     }
     nav .nav-bar {
-        justify-content: space-between;
+        justify-content: space-around;
     }
     nav .nav-bar .logo a {
         font-size: 30px;

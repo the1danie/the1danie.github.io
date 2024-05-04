@@ -45,7 +45,7 @@ nav .nav-bar {
     padding: 0 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 nav .nav-bar .logo a {
