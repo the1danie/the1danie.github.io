@@ -574,7 +574,7 @@ body.dark footer a, body.dark .contacts a, body.dark footer p {
 footer{
     background-color: #F9F9F9;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1% 10%;
 }
 
@@ -600,4 +600,5 @@ svg{
 
 #address{
     margin-top: 0;
+    font-size: 18px;
 }
