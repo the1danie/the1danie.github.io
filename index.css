@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-table {
- /* добавляем анимацию для свойства transform */
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1); /* Горизонтальное смещение, вертикальное смещение, размытие, размер тени, цвет тени */
-    padding-bottom: 20px; /* Добавляем отступ снизу */
-}
 
 
 
@@ -316,12 +311,17 @@ nav .nav-bar .logo a {
     pointer-events: auto;
 }
 
+
 table {
     width: calc(100% - 500px); /* Ширина таблицы с учетом отступов с обеих сторон */
     border-collapse: collapse; /* Объединение границ */
     margin-top: 200px; /* Отступ сверху */
     margin-left: auto; /* Автоматический отступ слева */
     margin-right: auto; /* Автоматический отступ справа */
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1); /* Горизонтальное смещение, вертикальное смещение, размытие, размер тени, цвет тени */
+    padding-bottom: 20px; /* Добавляем отступ снизу */
 }
 
 thead th:nth-child(1), /* Выбираем первую колонку в заголовке таблицы */
@@ -336,10 +336,6 @@ body.dark .coin, body.dark .price, body.dark .volume, body.dark .volume_24h, bod
 
 
 
-table {
-    width: 80%;
-    border-collapse: collapse;
-}
 
 th, td {
     padding: 8px;
@@ -500,7 +496,7 @@ tbody tr:hover {
 .dropbtn {
     background-color: var(--nav-color);
     color: white;
-    padding: 16px;
+    padding: 9px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -515,12 +511,10 @@ tbody tr:hover {
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     display: none;
-    position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 80px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    left: -103px;
+ 
   }
   
   /* Links inside the dropdown */
@@ -556,11 +550,9 @@ tbody tr:hover {
     padding-left: 0rem !important;
   }
 
-@media screen and (min-width: 800px){
-    .dropbtn {
-        display: none;
-    }
-}
+
+
+
 
 @media screen and (max-width: 800px) {
     .nav-bar .nav-links {
@@ -573,6 +565,17 @@ tbody tr:hover {
         justify-content: space-between;
     }
     nav .nav-bar .logo a {
-        font-size: 30px;
+        font-size: 15px;
+    }
+    th:nth-child(3), td:nth-child(3), /* Скрываем "Город" */
+    th:nth-child(4), td:nth-child(4)  /* Скрываем "Профессия" */ {
+        display: none;
+    }
+    footer {
+        font-size: 9px;
+        padding: 0px;
+    }
+    .h1_volume {
+        font-size: 15px !important;
     }
 }

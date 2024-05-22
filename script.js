@@ -19,3 +19,31 @@ const body = document.querySelector("body"),
       searchToggle.addEventListener("click", () => {
         searchToggle.classList.toggle("active");
       });
+
+function adjustTable() {
+  var table = document.getElementById("myTable");
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth <= 800) {
+      hideColumn(table, 3); // Скрываем "Город"
+      hideColumn(table, 4); // Скрываем "Профессия"
+  } else {
+      showColumn(table, 3); // Показываем "Город"
+      showColumn(table, 4); // Показываем "Профессия"
+  }
+}
+
+function hideColumn(table, colIndex) {
+  for (var i = 0; i < table.rows.length; i++) {
+      table.rows[i].cells[colIndex - 1].style.display = "none";
+  }
+}
+
+function showColumn(table, colIndex) {
+  for (var i = 0; i < table.rows.length; i++) {
+      table.rows[i].cells[colIndex - 1].style.display = "";
+  }
+}
+
+window.onresize = adjustTable;
+window.onload = adjustTable;
